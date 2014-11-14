@@ -2,11 +2,11 @@
 
 set -e
 
-tv_ip='192.168.178.27'
+tv_ip=''
 
 # use only A-Z a-z 0-9 for device. Probably. Haven't checked.
-my_device=""
-my_nick=""
+my_device=''
+my_nick=''
 
 my_uuid=$(uuidgen)
 
