@@ -1,0 +1,39 @@
+Here are some commands that were being sent in CURL form.
+They work without authentication. Maybe they are useful to
+you.
+
+
+curl -v -XPOST http://192.168.178.27/sony/system -d '{"method":"getMethodTypes","params":[""],"id":1,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/system -d '{"method":"getInterfaceInformation","params":[],"id":2,"version":"1.0"}'
+
+curl -v http://192.168.178.27:52323/dmr.xml
+
+curl -v http://192.168.178.27:52323/RenderingControlSCPD.xml
+
+curl -v http://192.168.178.27:52323/ConnectionManagerSCPD.xml
+
+curl -v http://192.168.178.27:52323/AVTransportSCPD.xml
+
+curl -v http://192.168.178.27:52323/DIALSCPD.xml
+
+curl -v http://192.168.178.27:52323/IRCCSCPD.xml
+
+curl -v http://192.168.178.27:52323/ScalarWebApiSCPD.xml
+
+curl -v -XPOST http://192.168.178.27:52323/upnp/control/ConnectionManager --header 'SOAPACTION: "urn:schemas-upnp-org:service:ConnectionManager:1#GetProtocolInfo"' --header 'Content-Type: text/xml; charset="utf-8"' -d '<?xml version="1.0"?><s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:GetProtocolInfo xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1"></u:GetProtocolInfo></s:Body></s:Envelope>'
+
+
+
+curl -v -XPOST http://192.168.178.27/sony/accessControl -d '{"method":"getMethodTypes","params":[""],"id":2,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/encryption -d '{"method":"getMethodTyp
+es","params":[""],"id":3,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/recording -d '{"method":"getMethodTypes","params":[""],"id":7,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/browser -d '{"method":"getMethodTypes","params":[""],"id":6,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/appControl -d '{"method":"getMethodTypes","params":[""],"id":4,"version":"1.0"}'
+
+curl -v -XPOST http://192.168.178.27/sony/accessControl -d '{"method":"actRegister","params":[{"clientid":"TVSideView:4e6b4a7a-aa52-416e-bfad-6aac6f560f9d","nickname":"Nexus 5 (TV SideView)","level":"private"},[{"value":"yes","function":"WOL"}]],"id":8,"version":"1.0"}'
