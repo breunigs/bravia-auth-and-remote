@@ -33,7 +33,10 @@ remote() {
 
  # get into known state
 remote 'DIGITAL'
+
 sleep 4
+echo 'Waiting for TV to boot fully…'
+sleep 30
 
 remote 'HOME'
 sleep 6
