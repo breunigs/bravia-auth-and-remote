@@ -19,7 +19,7 @@ if [ -e 'auth_cookie' ]; then
   exit 1
 fi
 
-if [ "$tv_ip" == "" ] || [ "$my_nick" == "" || [ "$my_device" == "" ]; then
+if [ "$tv_ip" = "" ] || [ "$my_nick" = "" ] || [ "$my_device" = "" ]; then
   echo "Missing configuration data, please edit the script and run it again."
   exit 2
 fi
