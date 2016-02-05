@@ -48,7 +48,7 @@ tv_auth_header="Authorization: Basic $(echo ":$tv_challenge\c" | base64)"
 echo "-------------------------------"
 echo "Trying to register on $tv_ip, this time with the given code…"
 echo "\n\n"
-cookie=$(curl --include --silent -XPOST http://$tv_ip/sony/accessControl --header "$tv_auth_header" -d "{\"method\":\"actRegister\",\"params\":[{\"clientid\":\"$my_nick:$my_uuid\",\"nickname\":\"$my_nick ($my_device)\",\"level\":\"private\"},[{\"value\":\"yes\",\"function\":\"WOL\"}]],\"id\":8,\"version\":\"1.0\"}" | grep -o -E 'auth=([a-z0-9]+)')
+cookie=$(curl --include --silent -XPOST http://$tv_ip/sony/accessControl --header "$tv_auth_header" -d "{\"method\":\"actRegister\",\"params\":[{\"clientid\":\"$my_nick:$my_uuid\",\"nickname\":\"$my_nick ($my_device)\",\"level\":\"private\"},[{\"value\":\"yes\",\"function\":\"WOL\"}]],\"id\":8,\"version\":\"1.0\"}" | grep -o -E 'auth=([A-Za-z0-9]+)')
 echo $cookie
 
 echo $cookie > 'auth_cookie'
