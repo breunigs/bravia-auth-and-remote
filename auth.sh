@@ -43,7 +43,7 @@ echo "Okay, now enter the 4-digit code shown on the TV:"
 read tv_challenge
 echo "\n\n"
 
-tv_auth_header="Authorization: Basic $(echo -n ":$tv_challenge" | base64)"
+tv_auth_header="Authorization: Basic $(echo ":$tv_challenge\c" | base64)"
 
 echo "-------------------------------"
 echo "Trying to register on $tv_ip, this time with the given code…"
