@@ -26,7 +26,7 @@ fi
 
 
 echo "-------------------------------"
-echo "Trying to register on $tv_ip…"
+echo "Trying to register on $tv_ip..."
 curl --silent -XPOST http://$tv_ip/sony/accessControl -d "{\"method\":\"actRegister\",\"params\":[{\"clientid\":\"$my_nick:$my_uuid\",\"nickname\":\"$my_nick ($my_device)\",\"level\":\"private\"},[{\"value\":\"yes\",\"function\":\"WOL\"}]],\"id\":8,\"version\":\"1.0\"}"
 echo "\n\n"
 
@@ -35,8 +35,8 @@ echo 'a dialog with a 4-digit PIN.'
 echo 'A message with "Registration has been cancelled" after this step means'
 echo 'that the UUID seems to be registered already.'
 echo 'Delete old registered devices in:'
-echo 'Settings → Network → Home Network Setup → Remote Device / Renderer'
-echo '  → Registered Remote Devices'
+echo 'Settings -> Network -> Home Network Setup -> Remote Device / Renderer'
+echo '  -> Registered Remote Devices'
 
 echo "\n\n"
 echo "Okay, now enter the 4-digit code shown on the TV:"
@@ -46,7 +46,7 @@ echo "\n\n"
 tv_auth_header="Authorization: Basic $(echo ":$tv_challenge\c" | base64)"
 
 echo "-------------------------------"
-echo "Trying to register on $tv_ip, this time with the given code…"
+echo "Trying to register on $tv_ip, this time with the given code..."
 echo "\n\n"
 cookie=$(curl --include --silent -XPOST http://$tv_ip/sony/accessControl --header "$tv_auth_header" -d "{\"method\":\"actRegister\",\"params\":[{\"clientid\":\"$my_nick:$my_uuid\",\"nickname\":\"$my_nick ($my_device)\",\"level\":\"private\"},[{\"value\":\"yes\",\"function\":\"WOL\"}]],\"id\":8,\"version\":\"1.0\"}" | grep -o -E 'auth=([A-Za-z0-9]+)')
 echo $cookie
