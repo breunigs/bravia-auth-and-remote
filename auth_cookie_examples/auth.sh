@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Note: this is only useful when you want to build an APP that also supports
+#       authentication via cookie. The cookie method loses validity after a
+#       couple of weeks, so so there is probably some refresh method required
+#       which is not detailed here.
+
 set -e
 
 tv_ip=''
