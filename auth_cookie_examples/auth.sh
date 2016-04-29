@@ -67,6 +67,12 @@ echo "Your computer is now registered, use it like this:"
 echo
 echo "   curl --cookie \"$cookie\" -XPOST http://$tv_ip/sony/system -d '<JSON STUFF>'"
 
+# Uncomment this to capture the MAC address
+#echo;echo
+#echo "Saving MAC address. This useful to implement Wake-on-LAN"
+#mac=$(arp -a | grep ${tv_ip} | awk '{ print $4 }')
+#echo $mac > 'mac'
+
 echo;echo
 ../print_ircc_codes.sh $tv_ip > ircc_command_list
 echo "Available IRCC commands have been saved to 'ircc_command_list'"
