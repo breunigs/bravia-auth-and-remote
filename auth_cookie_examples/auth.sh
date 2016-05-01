@@ -50,8 +50,6 @@ read tv_challenge
 echo "export tv_challenge=${tv_challenge}" > 'tv_challenge'
 echo;echo
 
-tv_auth_header="Authorization: Basic $(echo ":$tv_challenge\c" | base64)"
-
 echo "-------------------------------"
 echo "Trying to register on $tv_ip, this time with the given code..."
 echo;echo
