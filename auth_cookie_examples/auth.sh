@@ -2,22 +2,15 @@
 
 # Note: this is only useful when you want to build an APP that also supports
 #       authentication via cookie. The cookie method loses validity after a
-#       couple of weeks, so so there is probably some refresh method required
-#       which is not detailed here.
+#       couple of weeks, so you need to run reauth.sh some time before that.
 
 set -e
 
-tv_ip=''
-
-# use only A-Z a-z 0-9 for device. Probably. Haven't checked.
-my_device=''
-my_nick=''
-
-my_uuid=$(uuidgen)
-
-
+my_uuid=$(uuid)
 
 cd $(dirname $0)
+
+. ./bravia.cfg
 
 if [ -e 'auth_cookie' ]; then
   echo "There's already an auth_cookie file. Delete the file to continue."
@@ -58,6 +51,7 @@ cookie=$(curl --include --silent -XPOST http://$tv_ip/sony/accessControl --user 
 echo $cookie
 
 echo $cookie > 'auth_cookie'
+echo $my_uuid > 'uuid'
 
 echo;echo
 echo "If everything worked, you should see an auth=<code> line above."
@@ -75,4 +69,4 @@ echo;echo
 ../print_ircc_codes.sh $tv_ip > ircc_command_list
 echo "Available IRCC commands have been saved to 'ircc_command_list'"
 echo
-echo "Run a IRCC command with: ./send_command.sh $tv_ip <IRCC-Code>"
+echo "Run a IRCC command with: ./example_curl.sh $tv_ip <IRCC-Code>"
