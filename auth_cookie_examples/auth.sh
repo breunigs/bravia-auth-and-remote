@@ -6,7 +6,7 @@
 
 set -e
 
-my_uuid=$(uuid)
+my_uuid=$(uuidgen)
 
 cd $(dirname $0)
 
