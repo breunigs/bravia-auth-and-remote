@@ -27,8 +27,7 @@ curl -v -XPOST http://192.168.178.27:52323/upnp/control/ConnectionManager --head
 
 curl -v -XPOST http://192.168.178.27/sony/accessControl -d '{"method":"getMethodTypes","params":[""],"id":2,"version":"1.0"}'
 
-curl -v -XPOST http://192.168.178.27/sony/encryption -d '{"method":"getMethodTyp
-es","params":[""],"id":3,"version":"1.0"}'
+curl -v -XPOST http://192.168.178.27/sony/encryption -d '{"method":"getMethodTypes","params":[""],"id":3,"version":"1.0"}'
 
 curl -v -XPOST http://192.168.178.27/sony/recording -d '{"method":"getMethodTypes","params":[""],"id":7,"version":"1.0"}'
 
@@ -37,3 +36,5 @@ curl -v -XPOST http://192.168.178.27/sony/browser -d '{"method":"getMethodTypes"
 curl -v -XPOST http://192.168.178.27/sony/appControl -d '{"method":"getMethodTypes","params":[""],"id":4,"version":"1.0"}'
 
 curl -v -XPOST http://192.168.178.27/sony/accessControl -d '{"method":"actRegister","params":[{"clientid":"TVSideView:4e6b4a7a-aa52-416e-bfad-6aac6f560f9d","nickname":"Nexus 5 (TV SideView)","level":"private"},[{"value":"yes","function":"WOL"}]],"id":8,"version":"1.0"}'
+
+curl -v -XPOST http://telescreen/sony/encryption -d '{"method":"getPublicKey","params":[""],"id":3,"version":"1.0"}'
