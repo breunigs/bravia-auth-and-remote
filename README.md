@@ -14,6 +14,16 @@ You need to set your TV to use a pre-shared key.
 
 See `example_goto_media_player.sh` on how to build your automations.
 
+You can also use `send_name.sh` to execute a list of commands with a short delay in between each. This script requires that `BRAVIA_IP` and `BRAVIA_PSK` be set.
+
+```
+BRAVIA_IP=1.2.3.4 BRAVIA_PSK=0.0.0.0 send_name.sh WakeUp Hdmi1
+```
+
+This will wake the TV up and switch the input to HDMI 1. (Tested on Sony A80J.)
+
+Note: The `send_name.sh` script adds a 200ms delay between each command, which might not be sufficient for opening apps like YouTube. Also, because of the limitations of emulating a remote control, not all operations are possible (such as opening a given URL using a specific app.)
+
 Have fun!
 
 ### More detailed explanation
